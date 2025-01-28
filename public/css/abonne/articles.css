@@ -1,0 +1,137 @@
+:root {
+    --primary-color: #6c63ff;
+    --primary-dark: #5a52d5;
+    --text-color: #333;
+    --background-color: #f9f9f9;
+    --table-header-bg: #f2f2f2;
+    --table-border-color: #e0e0e0;
+    --hover-color: #f5f5f5;
+    --status-published: #28a745; /* Vert */
+    --status-draft: #ffc107; /* Jaune foncé */
+    --status-pending: #ffcc00; /* Jaune */
+    --status-rejected: #dc3545; /* Rouge */
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    color: var(--text-color);
+    background-color: var(--background-color);
+}
+
+.page-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+.back-button-container {
+    margin-bottom: 2rem;
+}
+
+.back-button {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.5rem 1rem;
+    background-color: var(--primary-color);
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.back-button:hover {
+    background-color: var(--primary-dark);
+}
+
+.back-icon {
+    margin-right: 0.5rem;
+    font-size: 1.2rem;
+}
+
+.page-title {
+    font-size: 2rem;
+    color: var(--primary-color);
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+
+.table-container {
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    overflow-x: auto;
+}
+
+.table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+}
+
+.table th,
+.table td {
+    padding: 1rem;
+    text-align: left;
+}
+
+.table th {
+    background-color: var(--table-header-bg);
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 0.85rem;
+    letter-spacing: 0.05em;
+    border-bottom: 2px solid var(--table-border-color);
+}
+
+.table td {
+    border-bottom: 1px solid var(--table-border-color);
+}
+
+.table tbody tr:hover {
+    background-color: var(--hover-color);
+}
+
+.post-image {
+    width: 60px;
+    height: 60px;
+    object-fit: cover;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.content-preview {
+    max-width: 300px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.status-badge {
+    padding: 0.25rem 0.5rem;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: bold;
+    text-transform: capitalize;
+}
+
+.status-published {
+    background-color: var(--status-published);
+    color: white;
+}
+
+.status-draft {
+    background-color: var(--status-draft);
+    color: black;
+}
+
+.status-pending {
+    background-color: var(--status-pending);
+    color: black;
+}
+
+.status-rejected {
+    background-color: var(--status-rejected);
+    color: white;
+}

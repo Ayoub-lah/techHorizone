@@ -1,0 +1,76 @@
+.subscribers-list {
+    background: white;
+    border-radius: 0.5rem;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    overflow: hidden;
+}
+
+.subscriber-item {
+    display: flex;
+    align-items: center;
+    padding: 1rem 1.5rem;
+    border-bottom: 1px solid var(--bg-light);
+    justify-content: space-between;
+}
+
+.subscriber-avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: var(--primary-light);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-weight: bold;
+    margin-right: 1rem;
+}
+
+.subscriber-info {
+    flex: 1;
+}
+
+.subscriber-name {
+    font-weight: 500;
+    color: var(--text-dark);
+}
+
+.subscriber-email {
+    color: var(--text-light);
+    font-size: 0.875rem;
+}
+
+.subscriber-status {
+    padding: 0.25rem 0.5rem;
+    border-radius: 9999px;
+    font-size: 0.75rem;
+    font-weight: 500;
+}
+
+.status-active {
+    background-color: var(--success);
+    color: white;
+}
+
+.status-inactive {
+    background-color: var(--danger);
+    color: white;
+}
+
+.button {
+    padding: 0.5rem 1rem;
+    border-radius: 0.375rem;
+    border: none;
+    cursor: pointer;
+    font-weight: 500;
+    transition: all 0.2s;
+}
+
+.button-danger {
+    background: var(--danger);
+    color: white;
+}
+
+.button:hover {
+    opacity: 0.9;
+}

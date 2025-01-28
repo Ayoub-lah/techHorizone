@@ -1,0 +1,543 @@
+:root {
+    --primary-color:#1976d2;
+    --secondary-color: #1976d2;
+    --background-color: #f4f7f9;
+    --text-color: #333;
+    --card-background: #ffffff;
+    --card-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    --transition: all 0.3s ease;
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+
+body {
+    background-color: var(--background-color);
+    color: var(--text-color);
+    line-height: 1.6;
+    padding: 1rem;
+}
+.magazines-page {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+    margin-left: 10px;
+    position: relative;
+    overflow: hidden;
+    margin-top: 10px;
+}
+
+
+/* Grille des magazines */
+.magazines-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 2rem;
+}
+
+.magazine-card {
+    background: linear-gradient(135deg, #f5f7fa, #eceff1); /* Dégradé doux pour les cartes */
+    border-radius: 15px; /* Coins arrondis */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1); /* Ombre subtile */
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+    display: flex;
+    flex-direction: column;
+}
+
+.magazine-card:hover {
+    transform: translateY(-10px); /* Légère élévation au survol */
+    box-shadow: 0 12px 20px rgba(78, 186, 111, 0.516); /* Ombre renforcée */;
+    background: linear-gradient(135deg, #e8f5e9, #a5d6a7); /* Dégradé vert pastel au survol */
+}
+
+.magazine-cover {
+    height: 200px;
+    background-color: #1976d2; /* Couleur de fond bleu */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+    background: linear-gradient(135deg, #2196f3, #64b5f6); /* Dégradé pour la couverture */
+}
+
+.magazine-cover::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.2); /* Couche d'ombre subtile */
+}
+
+.magazine-number {
+    font-size: 3rem;
+    color: #ffffff;
+    font-weight: bold;
+    position: relative;
+    z-index: 1;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2); /* Légère ombre de texte */
+}
+
+.magazine-info {
+    padding: 1.5rem;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    background: #ffffff; /* Couleur de fond neutre */
+    border-top: 3px solid #64b5f6; /* Ligne décorative */
+}
+
+.magazine-info h2 {
+    font-size: 1.4rem;
+    margin-bottom: 0.5rem;
+    color: #1e88e5; /* Couleur du titre */
+}
+
+.magazine-info p {
+    font-size: 0.9rem;
+    color: #757575; /* Texte doux */
+    margin-bottom: 0.5rem;
+}
+
+.view-details-btn {
+    display: inline-block;
+    background-color: #1976d2; /* Bouton bleu */
+    color: #ffffff;
+    padding: 0.75rem 1rem;
+    border-radius: 25px; /* Boutons arrondis */
+    text-decoration: none;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-top: auto;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+    text-align: center;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1); /* Ombre légère */
+}
+
+.view-details-btn:hover {
+    background-color: #1565c0; /* Accentuation du bleu au survol */
+    transform: translateY(-2px); /* Légère élévation du bouton */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Ombre renforcée */
+}
+
+
+
+
+        /* Header */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 2rem;
+            background-color: #ffffff;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            right: -2px;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #3B82F6; /* Bleu vibrant pour attirer l'attention */
+            text-decoration: none;
+            background: linear-gradient(45deg, #3B82F6, #22C55E); /* Dégradé bleu-vert */
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent; /* Effet texte dégradé */
+            transition: color 0.3s ease, transform 0.2s ease;
+}
+
+.logo:hover {
+    transform: scale(1.1); /* Légère animation au survol */
+    color: #2563EB; /* Accentuation du bleu */
+}
+
+        /* Cercle pour l'icône */
+        .profile-circle {
+    width: 50px;
+    height: 50px;
+    background: linear-gradient(135deg, #3B82F6, #22C55E); /* Dégradé moderne bleu-vert */
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 1.5rem;
+    font-weight: bold; /* Accentuer la lettre */
+    cursor: pointer;
+    position: relative;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Ombre pour donner de la profondeur */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Animation fluide */
+}
+.profile-circle:hover {
+    transform: scale(1.1); /* Légère augmentation de taille au survol */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Accentuation de l'ombre au survol */
+}
+
+.profile-circle:active {
+    transform: scale(0.95); /* Réduction légère pour un effet "bouton pressé" */
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2); /* Ombre réduite au clic */
+}
+        /* Menu déroulant */
+        .dropdown-menu {
+            display: none;
+            position: absolute;
+            top: 60px;
+            right: 2rem;
+            background-color: white;
+            border: 1px solid #ddd;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            border-radius: 5px;
+            overflow: hidden;
+            z-index: 100;
+        }
+
+        .dropdown-menu a,
+        .dropdown-menu button {
+            text-decoration: none;
+            color: #1a202c;
+            display: block;
+            padding: 1rem;
+            text-align: left;
+            transition: background-color 0.3s ease;
+            background: none;
+            border: none;
+            cursor: pointer;
+            width: 100%;
+        }
+
+        .dropdown-menu a:hover,
+        .dropdown-menu button:hover {
+            background-color: #f7fafc;
+        }
+
+        /* Affichage du menu */
+        .profile-circle:hover + .dropdown-menu,
+        .dropdown-menu:hover {
+            display: block;
+        }
+
+        /* Sidebar */
+        .sidebar {
+            width: 250px;
+            background: rgba(103, 68, 68, 0);
+            padding: 2rem 1rem;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+            height: 100vh;
+            position: fixed;
+            top: 87px;
+            left: 0;
+            overflow-y: auto;
+        }
+
+        .sidebar h2 {
+            font-size: 1.5rem;
+            margin-bottom: 2rem;
+            color: #3B82F6; /* Bleu vibrant pour attirer l'attention */
+    text-decoration: none;
+    background: linear-gradient(45deg, #3B82F6, #22C55E); /* Dégradé bleu-vert */
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent; /* Effet texte dégradé */
+            text-align: center;
+        }
+
+       .sidebar a {
+    display: block;
+    text-decoration: none;
+    color: #2d3748;
+    padding: 0.75rem 1rem;
+    margin-bottom: 1rem;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+    font-size: 1rem;
+    font-weight:500;
+}
+
+        .sidebar a:hover {
+            background-color: rgba(46, 125, 50, 0.1); /* Légère surbrillance au survol */
+            color: #2e7d32; /* Texte vert */
+            font-weight:bold;
+        }
+
+
+
+
+        .sidebar .btn-primary {
+            background: linear-gradient(45deg, #3B82F6, #22C55E); /* Dégradé bleu-vert */
+
+            color: white;
+            text-align: center;
+            display: block;
+            padding: 0.75rem;
+            border-radius: 5px;
+            font-weight: bold;
+            text-decoration: none;
+        }
+
+        .sidebar .btn-primary:hover {
+            background-color: #5a52d5;
+        }
+
+        /* Main Content */
+        main {
+            margin-left: 270px;
+            padding: 2rem;
+            width: calc(100% - 270px);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 20px;
+            margin-left: 10px;
+        }
+
+        .posts-container {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .posts-grid {
+            display: flex;
+            transition: transform 0.3s ease;
+        }
+
+        .post-card {
+            flex: 0 0 calc(33.333% - 20px);
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            transition: transform 0.2s ease;
+            margin-top: 45px;
+            margin-right: 30px;
+        }
+
+        .post-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .post-image-container {
+            width: 100%;
+            height: 220px;
+            overflow: hidden;
+            position: relative;
+            margin-top: 20%;
+        }
+
+        .post-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+        }
+
+        .post-content-wrapper {
+            padding: 20px;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .post-title {
+            font-size: 18px;
+            color: #333;
+            margin: 10px 0;
+            font-weight: 600;
+        }
+
+        .post-author {
+            color: #666;
+            font-size: 14px;
+            margin-bottom: 12px;
+        }
+
+        .post-description {
+            color: #555;
+            font-size: 14px;
+            line-height: 1.6;
+            margin-bottom: 20px;
+            flex-grow: 1;
+        }
+
+        .read-more-btn {
+            display: inline-block;
+            padding: 8px 20px;
+            background-color: #2ea44f;
+            color: white;
+            text-decoration: none;
+            border-radius: 6px;
+            font-size: 14px;
+            font-weight: 500;
+            transition: background-color 0.2s ease;
+            text-align: center;
+            width: fit-content;
+        }
+
+        .read-more-btn:hover {
+            background-color: #2c974b;
+        }
+
+        .post-footer {
+            padding-top: 20px;
+            margin-top: auto;
+        }
+
+        /* Navigation buttons */
+        .nav-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-20%);
+    background-color: rgba(37, 99, 235, 0.8); /* Bleu transparent */
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    font-size: 24px;
+    cursor: pointer;
+    z-index: 10;
+    border-radius: 50%; /* Boutons arrondis */
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.nav-button:hover {
+    background-color: rgba(37, 99, 235, 1); /* Accentuation de la couleur */
+    transform: scale(1.1); /* Légère augmentation de taille */
+}
+
+.nav-button.prev {
+    left: 10px;
+}
+
+#magazinePrevBtn {
+    left: 3%;
+    margin-top: 51px;
+}
+
+#magazineNextBtn {
+    right: 3%;
+    margin-top: 51px;
+}
+
+.nav-button.next {
+ right:10px;
+}
+
+        
+
+           /* Right Sidebar Styles */
+.sidebar-right {
+    width: 350px;
+    position: fixed;
+    right: 0;
+    top: 84px; /* Ajusté en fonction de la hauteur de l'en-tête */
+    height: calc(100vh - 84px);
+    background: linear-gradient(135deg, #ffffff, #e3f2fd); /* Dégradé clair */
+    padding: 24px;
+    overflow-y: auto;
+    border-left: 1px solid rgba(230, 230, 230, 1);
+    box-shadow: -4px 0 8px rgba(0, 0, 0, 0.1);
+}
+
+.sidebar-section {
+    margin-bottom: 32px;
+}
+
+.sidebar-title {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #1565c0; /* Bleu foncé pour le titre */
+    margin-bottom: 16px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border-bottom: 2px solid #64b5f6; /* Ligne d'accentuation */
+    padding-bottom: 4px;
+}
+
+.recommended-post {
+    display:flex;
+    gap: 12px;
+    padding: 12px;
+    text-decoration: none;
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 8px;
+    transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+    border: 1px solid rgba(230, 230, 230, 0.7);
+    margin-bottom: 10px; /* Marge entre les posts */
+    
+
+}
+
+.recommended-post:hover {
+    transform: translateY(-5px);
+    background-color: #e3f2fd; /* Bleu clair au survol */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.recommended-image {
+    width: 64px;
+    height: 64px;
+    object-fit: cover;
+    border-radius: 8px;
+    border: 2px solid #bbdefb; /* Bordure bleue */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.recommended-content {
+    flex: 1;
+    min-width: 0;
+}
+
+.recommended-title {
+    font-size: 1rem;
+    color: #1a237e; /* Bleu très foncé */
+    font-weight: 600;
+    margin-bottom: 4px;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    transition: color 0.3s ease;
+}
+
+.recommended-title:hover {
+    color: #1565c0; /* Bleu intense au survol */
+}
+
+.recommended-author {
+    font-size: 0.85rem;
+    color: #546e7a; /* Gris bleuté */
+}
+
+/* Animation au survol */
+.post-description .stat:hover .icon {
+    transform: scale(1.3);
+    transition: transform 0.3s ease;
+}
+
+.section-gradient {
+    height: 6px;
+    background: linear-gradient(90deg, #4caf50, #2196f3);
+    border-radius: 50px;
+    margin: 24px ;
+    width: 75%;
+}
+.titre{
+    text-align: center;
+    margin-top: 5%;
+    margin-right: 23%;
+    
+
+}

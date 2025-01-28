@@ -1,0 +1,41 @@
+.btn-activate {
+    background-color: #4CAF50; 
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    margin-right: 5px;
+}
+
+.btn-deactivate {
+    background-color: #f44336;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+}
+
+.btn-activate:disabled, .btn-deactivate:disabled {
+    background-color: #cccccc;
+    cursor: not-allowed;
+}
+
+.btn-add {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-block;
+    margin-bottom: 20px;
+    border-radius: 5px;
+}
+
+.btn-add:hover {
+    background-color: #0056b3;
+}
+
+.btn-add{
+    float: right;
+}

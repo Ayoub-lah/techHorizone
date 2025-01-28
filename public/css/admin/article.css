@@ -1,0 +1,62 @@
+.btn-activate {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    margin-right: 5px;
+}
+
+.btn-deactivate {
+    background-color: #f44336;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+}
+
+.btn-activate:disabled, .btn-deactivate:disabled {
+    background-color: #cccccc;
+    cursor: not-allowed;
+}
+
+.alert {
+    padding: 15px;
+    margin-bottom: 20px;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    font-size: 16px;
+}
+
+.alert-success {
+    background-color: #d4edda; /* Couleur de fond verte claire */
+    border-color: #c3e6cb; /* Bordure verte */
+    color: #155724; /* Texte vert foncé */
+}
+
+/* Optionnel : Ajouter une icône ou une animation */
+.alert-success::before {
+    content: "✔"; /* Icône de succès */
+    margin-right: 10px;
+    font-size: 18px;
+}
+
+/* Animation pour faire apparaître le message */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.alert {
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+
+
+

@@ -1,0 +1,166 @@
+.article-container {
+    max-width: 100%;
+    margin: auto;
+    background: #fff;
+    padding: 30px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+/* Article Header */
+.article-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+/* Article Title */
+.article-title {
+    font-size: 2.5rem;
+    color: #333;
+    margin: 0;
+}
+
+/* Recommander Button */
+.recommander-btn {
+    background: #28a745;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 4px;
+    font-size: 1rem;
+    transition: background 0.3s ease;
+}
+
+.recommander-btn:hover {
+    background: #218838;
+}
+
+/* Article Picture */
+.article-picture img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+/* Author and Date */
+.article-meta {
+    font-size: 0.9rem;
+    color: #777;
+    margin-bottom: 30px;
+}
+
+.article-meta .author {
+    font-weight: bold;
+    margin-right: 10px;
+}
+
+.article-meta .date {
+    font-style: italic;
+}
+
+/* Article Content */
+.article-content {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: #555;
+    margin-bottom: 40px;
+}
+
+.article-content p {
+    margin-bottom: 20px;
+}
+
+/* Comments Section */
+.comments-section {
+    margin-top: 40px;
+}
+
+.comments-section h2 {
+    font-size: 1.8rem;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.comments-list {
+    margin-bottom: 20px;
+}
+
+/* Comment Styling */
+.comment {
+    background: #f9f9f9;
+    padding: 20px;
+    margin-bottom: 15px;
+    border-left: 4px solid #007bff;
+    border-radius: 4px;
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+.comment:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.comment-author {
+    font-weight: bold;
+    margin: 0 0 5px 0;
+    color: #333;
+}
+
+.comment-content {
+    margin: 0;
+    color: #555;
+}
+
+.delete-comment {
+    background: #ff4d4d;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    cursor: pointer;
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    border-radius: 4px;
+    transition: background 0.3s ease;
+}
+
+.delete-comment:hover {
+    background: #cc0000;
+}
+
+/* Comment Form */
+.comment-form textarea {
+    width: 100%;
+    padding: 15px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    resize: vertical;
+    font-size: 1rem;
+    transition: border-color 0.3s ease;
+}
+
+.comment-form textarea:focus {
+    border-color: #007bff;
+    outline: none;
+}
+
+.comment-form button {
+    background: #007bff;
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    cursor: pointer;
+    border-radius: 4px;
+    font-size: 1rem;
+    transition: background 0.3s ease;
+}
+
+.comment-form button:hover {
+    background: #0056b3;
+}
